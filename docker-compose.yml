@@ -6,16 +6,3 @@ services:
       dockerfile: dockerfile/Dockerfile.prod
     ports:
       - "8080:80"
-    volumes:
-      - /usr/src/app/node_modules
-      - ./:/usr/src/app
-    stdin_open: true
-
-  tests:
-    build:
-      context: .
-      dockerfile: dockerfile/Dockerfile.prod
-    volumes:
-      - /usr/src/app/node_modules
-      - ./:/usr/src/app
-    command: ["pnpm", "run", "test"]
