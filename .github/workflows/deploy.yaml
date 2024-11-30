@@ -11,9 +11,9 @@ jobs:
       - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
       - run: docker build -t my-docker-image:${{ github.sha }} -f dockerfile/Dockerfile.dev ./
       - run: docker run -e CI=true my-docker-image:${{ github.sha }} pnpm run test
-      - run: pnpm run build
+
       - name: Generate deployment package
-        run: zip -r deploy.zip dist
+        run: zip -r deploy.zip . -x '*.git*'
 
       - name: Deploy to EB
         uses: einaregilsson/beanstalk-deploy@v18
