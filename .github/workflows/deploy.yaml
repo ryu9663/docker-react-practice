@@ -9,7 +9,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
-      - run: docker build -t my-docker-image:${{ github.sha }} -f dockerfile/Dockerfile.prod ./
+      - run: docker build -t my-docker-image:${{ github.sha }} -f dockerfile/Dockerfile.dev ./
       - run: docker run -e CI=true my-docker-image:${{ github.sha }} pnpm run test
 
       - name: Generate deployment package
