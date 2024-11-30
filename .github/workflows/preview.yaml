@@ -33,8 +33,8 @@ jobs:
         run: |
           docker build -t my-docker-image:${{ github.sha }} -f dockerfile/Dockerfile.prod ./
 
-      # 5. Push Docker Image to Registry
-      - name: Push Docker Image
-        run: |
-          docker tag my-docker-image:${{ github.sha }} juneryu/react-docker-practice-ryu9663:latest
-          docker push juneryu/react-docker-practice-ryu9663:latest
+      # # 5. Push Docker Image to Registry
+      # - name: Push Docker Image
+      #   run: |
+      #     docker tag my-docker-image:${{ github.sha }} juneryu/react-docker-practice-ryu9663:latest
+      #     docker push juneryu/react-docker-practice-ryu9663:latest
