@@ -4,7 +4,7 @@ import { Card } from "./components/Card";
 function App() {
   return (
     <>
-      <h1>Aaasdfasdfsasdf</h1>
+      <h1>미ㅏ덯</h1>
       <Card />
     </>
   );
