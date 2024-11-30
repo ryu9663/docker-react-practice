@@ -3,9 +3,9 @@ services:
   react:
     build:
       context: .
-      dockerfile: dockerfile/Dockerfile.dev
+      dockerfile: dockerfile/Dockerfile.prod
     ports:
-      - "3000:3000"
+      - "8080:80"
     volumes:
       - /usr/src/app/node_modules
       - ./:/usr/src/app
@@ -14,7 +14,7 @@ services:
   tests:
     build:
       context: .
-      dockerfile: dockerfile/Dockerfile.dev
+      dockerfile: dockerfile/Dockerfile.prod
     volumes:
       - /usr/src/app/node_modules
       - ./:/usr/src/app

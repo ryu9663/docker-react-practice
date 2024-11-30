@@ -13,4 +13,7 @@ export default defineConfig({
 
     port: 3000,
   },
+  build: {
+    outDir: "dist", // 빌드 결과 디렉토리
+  },
 });

@@ -10,7 +10,8 @@
     "start": "vite preview",
     "test": "vitest",
     "build:docker-copy": "docker build -t docker-test -f dockerfile/Dockerfile.dev ./",
-    "build:docker-volumn": "docker run -p 4000:3000 -v /usr/src/app/node_modules -v $(pwd):/user/src/app docker-test"
+    "build:docker-volumn": "docker run -p 4000:3000 -v /usr/src/app/node_modules -v $(pwd):/user/src/app docker-test",
+    "build:docker-prod": "docker build -t docker-test-prod -f dockerfile/Dockerfile.prod ./"
   },
   "dependencies": {
     "react": "^18.3.1",
