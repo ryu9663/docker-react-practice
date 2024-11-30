@@ -31,7 +31,7 @@ jobs:
       # 4. Build Docker Image
       - name: Build Docker Image
         run: |
-          docker build -t my-docker-image:${{ github.sha }} -f ./
+          docker build -t my-docker-image:${{ github.sha }} ./
 
       # # 5. Push Docker Image to Registry
       # - name: Push Docker Image
