@@ -3,6 +3,6 @@ services:
   react:
     build:
       context: .
-      dockerfile: dockerfile/Dockerfile.prod
+      dockerfile: Dockerfile
     ports:
       - "8080:80"
